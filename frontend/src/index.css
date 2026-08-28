@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-ink font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-display text-brown-deep;
+  }
+
+  ::selection {
+    @apply bg-rose/40 text-brown-deep;
+  }
+
+  *:focus-visible {
+    outline: 2px solid #C2818E;
+    outline-offset: 2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FFF8F0;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #E8D5C4;
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D8A7B1;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-rose text-white font-label font-medium
+      px-6 py-3 rounded-full shadow-soft transition-all duration-300
+      hover:bg-blush hover:shadow-lift hover:-translate-y-0.5
+      active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 bg-transparent text-brown-deep font-label font-medium
+      px-6 py-3 rounded-full border border-brown/30 transition-all duration-300
+      hover:border-rose hover:text-rose hover:-translate-y-0.5;
+  }
+
+  .card-cozy {
+    @apply bg-white rounded-cozy shadow-soft border border-beige/60 transition-all duration-300;
+  }
+
+  .input-cozy {
+    @apply w-full bg-cream-deep/60 border border-beige-dark/50 rounded-2xl px-4 py-3
+      font-body text-ink placeholder:text-brown-light/70
+      focus:outline-none focus:ring-2 focus:ring-rose/40 focus:border-rose transition-all duration-200;
+  }
+
+  .label-eyebrow {
+    @apply font-label uppercase tracking-[0.2em] text-xs text-rose-dark font-semibold;
+  }
+
+  .section-padding {
+    @apply px-5 sm:px-8 lg:px-16 py-16 md:py-24;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .shimmer-bg {
+    background: linear-gradient(90deg, #F1E4D6 0%, #FBF0E4 50%, #F1E4D6 100%);
+    background-size: 1000px 100%;
+  }
+}
