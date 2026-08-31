@@ -77,7 +77,9 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev'));
 }
 
-app.use('/', "Knot by Shaila working smoothly.")
+app.use('/', (req, res) => {
+    res.send('🧶 Crochet Nest API is running smoothly 🧶');
+});
 
 app.use('/api', generalLimiter);
 
