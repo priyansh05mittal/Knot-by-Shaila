@@ -1,3 +1,7 @@
+// Using CommonJS
+const dns = require('node:dns/promises');
+dns.setServers(['1.1.1.1', '8.8.8.8']);
+
 const path = require('path');
 require('dotenv').config();
 
@@ -72,6 +76,8 @@ app.use(
 if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev'));
 }
+
+app.use('/', "Knot by Shaila working smoothly.")
 
 app.use('/api', generalLimiter);
 
